@@ -38,32 +38,38 @@ function Messages() {
         <Header />
         <main className="flex-1 p-4 md:p-8">
           <div className="flex">
-            {/* Chat list */}
-            <div className="w-1/4 mr-4">
-              <div className="border border-gray-300 rounded-md p-4 mb-4">
-                {/* Sample chat list */}
-                <div className="flex items-center justify-between py-2">
-                  <div>Instagram</div>
-                  <div>10:00 AM</div>
+            <div className="w-1/4">
+              {/* Search bar */}
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                placeholder="Search messages..."
+                className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none"
+              />
+              {/* Display filtered messages */}
+              {filteredMessages.map(message => (
+                <div key={message.id} className="py-2">
+                  <div>{message.sender}</div>
+                  <div>{message.text}</div>
+                  <div>{message.timestamp}</div>
                 </div>
-                <div className="flex items-center justify-between py-2">
-                  <div>Twitter</div>
-                  <div>10:05 AM</div>
-                </div>
-                {/* Add more chat list items */}
-              </div>
+              ))}
             </div>
-            {/* Chat and messages section */}
-            <div className="w-3/4">
+            <div className="w-3/4 ml-4">
+              {/* Chat and messages section */}
               <div className="h-full border border-gray-300 rounded-md p-4">
-                {/* Display filtered messages */}
-                {filteredMessages.map(message => (
-                  <div key={message.id} className="mb-4">
-                    <div className="font-bold">{message.sender}</div>
-                    <div>{message.text}</div>
-                    <div className="text-sm text-gray-500">{message.timestamp}</div>
-                  </div>
-                ))}
+                {/* Sample received message */}
+                <div className="bg-gray-100 rounded-md p-2 mb-2">
+                  <div>Instagram</div>
+                  <div>Hello!</div>
+                </div>
+                {/* Sample sent message */}
+                <div className="bg-blue-200 rounded-md p-2 mb-2 ml-auto">
+                  <div>You</div>
+                  <div>Hi there!</div>
+                </div>
+                {/* Add more messages here */}
               </div>
               {/* Typing box */}
               <div className="flex items-center mt-4">
