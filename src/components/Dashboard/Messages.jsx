@@ -13,7 +13,7 @@ function Messages() {
   const [newMessage, setNewMessage] = useState('');
 
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+    setSearchQuery(e.target.value);   
     // Implement filtering logic here
   };
 
