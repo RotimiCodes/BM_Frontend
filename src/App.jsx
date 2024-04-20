@@ -9,6 +9,7 @@ import Orders from './components/DashboardSubPages/Orders';
 import ServicesPage from './components/DashboardSubPages/ServicesPage';
 import Payments from './components/Dashboard/Payments';
 import Withdrawal from './components/DashboardSubPages/Withdrawal';
+import Messages from './components/Dashboard/Messages';
 
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
    <Route exact path="/ServicesPage" element={<ServicesPage/>}/>
    <Route exact path="/Payments" element={<Payments/>}/>
    <Route exact path="/Payments/Withdrawal" element={<Withdrawal/>}/>
+
+   <Route exact path="/Messages" element={<Messages />} /> 
+   
+   
 
    </Routes>
  </div>

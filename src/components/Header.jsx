@@ -43,6 +43,7 @@ const Header = () => {
        Shop
       </Link>
       <Link
+      to ="/Messages"
          
         className="text-muted-foreground transition-colors hover:text-foreground"
       >
